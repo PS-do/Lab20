@@ -12,17 +12,33 @@ namespace Lab20
         delegate int MyDelegate (int a, int b);
         static void Main(string[] args)
         {
+            //MyDelegate myDelegate = PowerAB;
+            //Console.WriteLine(myDelegate(2, 10));
+
+            //myDelegate=PowerBA;
+            //Console.WriteLine(myDelegate(2, 10));
+            //////__________
+            
             MyDelegate myDelegate = PowerAB;
-            Console.WriteLine(myDelegate(2, 10));
+            myDelegate += PowerBA;
+            myDelegate(2, 10);
 
-            myDelegate=PowerBA;
-            Console.WriteLine(myDelegate(2, 10));
-
+           //
             Console.ReadKey();
         }
 
-        static int PowerAB(int a, int b) => (int)Math.Pow(a, b);
-        static int PowerBA(int a, int b) => (int)Math.Pow(b, a);
+        static int PowerAB(int a, int b)
+        {
+            int r = (int)Math.Pow(a, b);
+            Console.WriteLine(r);
+            return r;
+        }
+        static int PowerBA(int a, int b) 
+        {
+            int r = (int)Math.Pow(b, a);
+            Console.WriteLine(r);
+            return r;
+        }
         //{
         //    //int p = 1;
         //    //for (int i = 0; i < b; i++)
